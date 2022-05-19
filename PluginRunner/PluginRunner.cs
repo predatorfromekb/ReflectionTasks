@@ -1,17 +1,18 @@
 ﻿using System.Reflection;
 
-namespace PluginRunner;
-
-// Реализуйте запуск плагинов в конечной сборке
-public class PluginRunner
+namespace PluginRunner
 {
-    public void Run(Assembly executingAssembly)
+    // Реализуйте запуск плагинов в конечной сборке
+    public class PluginRunner
     {
-        // TODO
-    }
+        public void Run(Assembly executingAssembly)
+        {
+            // TODO
+        }
     
-    public void Run(string dllPath)
-    {
-        // TODO
+        public void Run(string dllPath)
+        {
+            // TODO
+        }
     }
 }

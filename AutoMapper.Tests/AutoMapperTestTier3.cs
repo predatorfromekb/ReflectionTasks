@@ -1,37 +1,38 @@
 using NUnit.Framework;
 
-namespace AutoMapper.Tests;
-
-public class AutoMapperTestTier3
+namespace AutoMapper.Tests
 {
-    [Test]
-    public void MapToPropertiesWithoutSetterOrWithCustomSetter()
+    public class AutoMapperTestTier3
     {
-        var obj = new InputClass
+        [Test]
+        public void MapToPropertiesWithoutSetterOrWithCustomSetter()
         {
-            Id = 4,
-            Title = "Hello"
-        };
-        var result = AutoMapper.Map<InputClass, OutputClass>(obj);
-        Assert.NotNull(result);
-        Assert.AreEqual(obj.Id, result.Id);
-        Assert.AreEqual(result.Title, "[Hello]");
-    }
+            var obj = new InputClass
+            {
+                Id = 4,
+                Title = "Hello"
+            };
+            var result = AutoMapper.Map<InputClass, OutputClass>(obj);
+            Assert.NotNull(result);
+            Assert.AreEqual(obj.Id, result.Id);
+            Assert.AreEqual(result.Title, "[Hello]");
+        }
 
-    class InputClass
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-    }
-    
-    class OutputClass
-    {
-        public int Id { get; }
-        private string title;
-        public string Title
+        class InputClass
         {
-            get => title; 
-            set => title = "[" + value + "]";
+            public int Id { get; set; }
+            public string Title { get; set; }
+        }
+    
+        class OutputClass
+        {
+            public int Id { get; }
+            private string title;
+            public string Title
+            {
+                get => title; 
+                set => title = "[" + value + "]";
+            }
         }
     }
 }

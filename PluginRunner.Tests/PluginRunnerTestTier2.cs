@@ -1,15 +1,15 @@
 using NUnit.Framework;
 
-namespace PluginRunner.Tests;
-
-// В этом случае нужно написать тест, тестирующий вызов плагина в сборке PluginRunner.Plugin
-// Прямой ссылки на эту сборку нет, так что придется использовать путь до dll-файла 
-[Parallelizable(ParallelScope.None)]
-public class PluginRunnerTestTier2
+namespace PluginRunner.Tests
 {
-    [Test]
-    public void LoadFromAssemblyPath()
+    // В этом случае нужно написать тест, тестирующий вызов плагина в сборке PluginRunner.Plugin
+// Прямой ссылки на эту сборку нет, так что придется использовать путь до dll-файла 
+    public class PluginRunnerTestTier2
     {
-        // TODO
+        [Test]
+        public void LoadFromAssemblyPath()
+        {
+            // TODO
+        }
     }
 }

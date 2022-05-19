@@ -1,6 +1,7 @@
-namespace PluginRunner;
-
-public interface IPlugin
+namespace PluginRunner
 {
-    void Run();
+    public interface IPlugin
+    {
+        void Run();
+    }
 }

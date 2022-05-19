@@ -1,17 +1,18 @@
-﻿namespace PluginRunner.Plugin;
-
-public class Plugin : IPlugin
+﻿namespace PluginRunner.Plugin
 {
-    public void Run()
+    public class Plugin : IPlugin
     {
-        Counter.Value += 50;
+        public void Run()
+        {
+            Counter.Value += 50;
+        }
     }
-}
 
-public class Plugin2 : IPlugin
-{
-    public void Run()
+    public class Plugin2 : IPlugin
     {
-        Counter.Value += 100;
+        public void Run()
+        {
+            Counter.Value += 100;
+        }
     }
 }

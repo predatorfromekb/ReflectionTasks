@@ -1,6 +1,7 @@
-namespace PluginRunner.Plugin;
-
-public static class Counter
+namespace PluginRunner.Plugin
 {
-    public static int Value = 0;
+    public static class Counter
+    {
+        public static int Value = 0;
+    }
 }

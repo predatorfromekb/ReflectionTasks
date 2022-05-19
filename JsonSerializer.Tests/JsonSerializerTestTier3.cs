@@ -1,31 +1,32 @@
 using NUnit.Framework;
 
-namespace JsonSerializer.Tests;
-
-public class JsonSerializerTestTier3
+namespace JsonSerializer.Tests
 {
-    [Test]
-    public void IgnoreNullValues()
+    public class JsonSerializerTestTier3
     {
-        var obj = new Class1()
+        [Test]
+        public void IgnoreNullValues()
         {
-            Delta = null,
-            Epsilon = null,
-            Nested = new Class1()
+            var obj = new Class1()
             {
                 Delta = null,
-                Epsilon = null
-            }
-        };
-        Assert.AreEqual(JsonSerializer.Serialize(obj), "{'Epsilon':null,'Nested':{'Epsilon':null}}");
-    }
+                Epsilon = null,
+                Nested = new Class1()
+                {
+                    Delta = null,
+                    Epsilon = null
+                }
+            };
+            Assert.AreEqual(JsonSerializer.Serialize(obj), "{'Epsilon':null,'Nested':{'Epsilon':null}}");
+        }
 
-    class Class1
-    {
-        [IgnoreNullValues]
-        public int? Delta { get; init; }
-        public bool? Epsilon { get; init; }
-        [IgnoreNullValues]
-        public Class1 Nested { get; init; }
+        class Class1
+        {
+            [IgnoreNullValues]
+            public int? Delta { get; init; }
+            public bool? Epsilon { get; init; }
+            [IgnoreNullValues]
+            public Class1 Nested { get; init; }
+        }
     }
 }

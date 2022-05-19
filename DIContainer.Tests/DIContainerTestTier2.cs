@@ -1,8 +1,8 @@
 using NUnit.Framework;
 
-namespace DIContainer.Tests;
-
-public class DIContainerTestTier2
+namespace DIContainer.Tests
+{
+    public class DIContainerTestTier2
 {
     [Test]
     public void ServiceWithChildren()
@@ -92,4 +92,5 @@ public class DIContainerTestTier2
             Class1 = class1;
         }
     }
+}
 }
